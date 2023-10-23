@@ -4,3 +4,4 @@
 ### Commands :
 - Compile & run : `make`
 - clean : `make clean`
+### Run locally in vs code : `ctrl + shift + b`
