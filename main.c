@@ -273,7 +273,7 @@ float grade_point(float x)
 
 void clear()
 {
-    // printf("\e[1;1H\e[2J"); // partially clears
+    // printf("\e[1;1H\e[2J"); // Mac OS (partially supported)
     system("cls"); // windows
     // system("clear"); // linux
 }
