@@ -1,4 +1,4 @@
-(forked from : https://github.com/sumayaruhas/Result-System)
+forked from : https://github.com/sumayaruhas/Result-System
 
 # cse-project-1
 
