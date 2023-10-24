@@ -255,25 +255,25 @@ void delete_student()
 float grade_point(float x)
 {
     if (x >= 80 && x <= 100)
-        return (4.00);
-    else if (x >= 75 && x < 80)
-        return (3.75);
-    else if (x >= 70 && x < 75)
-        return (3.50);
-    else if (x >= 65 && x < 70)
-        return (3.25);
-    else if (x >= 60 && x < 65)
-        return (3.00);
-    else if (x >= 55 && x < 60)
-        return (2.75);
-    else if (x >= 50 && x < 55)
-        return (2.50);
-    else if (x >= 45 && x < 50)
-        return (2.25);
-    else if (x >= 40 && x < 45)
-        return (2.00);
+        return 4.00;
+    else if (x >= 75)
+        return 3.75;
+    else if (x >= 70)
+        return 3.50;
+    else if (x >= 65)
+        return 3.25;
+    else if (x >= 60)
+        return 3.00;
+    else if (x >= 55)
+        return 2.75;
+    else if (x >= 50)
+        return 2.50;
+    else if (x >= 45)
+        return 2.25;
+    else if (x >= 40)
+        return 2.00;
     else
-        return (0);
+        return 0;
 }
 
 void clear()
