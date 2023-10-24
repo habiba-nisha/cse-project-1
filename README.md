@@ -6,4 +6,4 @@ forked from : https://github.com/sumayaruhas/Result-System
 ### Commands :
 - Compile & run : `make`
 - clean : `make clean`
-### Run locally in vs code : `ctrl + shift + b`
+### Run locally in vs code : `ctrl` + `shift` + `b`
