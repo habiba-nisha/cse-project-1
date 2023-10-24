@@ -23,9 +23,9 @@ int main()
 {
     clear();
 
-    int options;
+    int option;
 
-    while (options != 5)
+    while (option != 5)
     {
         printf("\n\tRESULTS OF STUDENTS OF CSE\n\n");
 
@@ -36,9 +36,9 @@ int main()
         printf("\t\t5. Exit\n\n");
 
         printf("\t\tEnter option : ");
-        scanf("%d", &options);
+        scanf("%d", &option);
 
-        switch (options)
+        switch (option)
         {
         case 1:
             clear();
