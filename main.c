@@ -38,39 +38,34 @@ int main()
         printf("\t\tEnter option : ");
         scanf("%d", &option);
 
+        clear();
         switch (option)
         {
         case 1:
-            clear();
             add_student();
             break;
         case 2:
-            clear();
             student_record();
             printf("\t\tPress any key to continue . . . ");
             getch();
             clear();
             break;
         case 3:
-            clear();
             search_student();
             printf("\t\tPress any key to continue . . . ");
             getch();
             clear();
             break;
         case 4:
-            clear();
             delete_student();
             printf("\t\tPress any key to continue . . . ");
             getch();
             clear();
             break;
         case 5:
-            clear();
             printf("\n\tThank You For Using Our App. Have a Nice Day!\n");
             exit(0);
         default:
-            clear();
             getch();
             printf("\t\tInvalid input\n");
             printf("\t\tPress any key to continue . . . ");
