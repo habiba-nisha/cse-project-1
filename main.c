@@ -1,3 +1,5 @@
+// project by group 6
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
@@ -276,5 +278,7 @@ float grade_point(float x)
 
 void clear()
 {
-    system("clear");
+    // printf("\e[1;1H\e[2J"); // partially clears
+    system("cls"); // windows
+    // system("clear"); // linux
 }
