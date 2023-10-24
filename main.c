@@ -1,4 +1,4 @@
-// project by group 6
+// result system
 
 #include <stdio.h>
 #include <conio.h>
@@ -113,7 +113,7 @@ void add_student()
 
         data.grade = (((grade_point(data.cse)) * 3) + ((grade_point(data.cse_lab)) * 1.5) + ((grade_point(data.eee)) * 3) + ((grade_point(data.eee_lab)) * 1.5) + ((grade_point(data.math)) * 3) + ((grade_point(data.physics)) * 3) + ((grade_point(data.urel)) * 2) + ((grade_point(data.urem)) * 1)) / 18;
 
-        printf("\n\t\tTotal GPA : %0.2f", data.grade);
+        printf("\n\t\tTotal Grade : %0.2f", data.grade);
         printf("\n\t\t_______________________________________\n\n");
 
         if (pr == NULL)
@@ -160,7 +160,7 @@ void student_record()
         printf("\t\t\tPHYSICS\t: %0.2f\n", data.physics);
         printf("\t\t\tMATH\t: %0.2f\n", data.math);
         printf("\t\t\tUREM\t: %0.2f\n", data.urem);
-        printf("\n\t\tTOTAL GPA\t: %0.2f\n", data.grade);
+        printf("\n\t\tTotal Grade\t: %0.2f\n", data.grade);
         printf("\t\t_______________________________________\n\n");
     }
 
@@ -198,12 +198,12 @@ void search_student()
             printf("\t\t\tPHYSICS\t: %0.2f\n", data.physics);
             printf("\t\t\tMATH\t: %0.2f\n", data.math);
             printf("\t\t\tUREM\t: %0.2f\n", data.urem);
-            printf("\n\t\tTOTAL GPA\t: %0.2f\n", data.grade);
+            printf("\n\t\tTotal Grade\t: %0.2f\n", data.grade);
             printf("\t\t_______________________________________\n\n");
         }
     }
     if (!find)
-        printf("\t\tRecord not found");
+        printf("\n\t\tRecord not found\n");
 
     fclose(pr);
 }
