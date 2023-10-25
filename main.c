@@ -14,9 +14,10 @@ void clear();
 
 struct student
 {
-    char name[60];
+    char firstName[50];
+    char lastName[50];
     char id[10];
-    float cse, cse_lab, eee_lab, eee, math, urel, physics, urem, grade;
+    float cse, cseLab, eeeLab, eee, math, urel, physics, urem, grade;
 };
 
 int main()
@@ -90,9 +91,15 @@ void add_student()
 
         printf("\t\tEnter ID\t: ");
         scanf("%s", data.id);
-        printf("\t\tEnter Name\t: ");
+
+        printf("\t\tFirst Name\t: ");
         fflush(stdin);
-        gets(data.name);
+        gets(data.firstName);
+
+        printf("\t\tLast Name\t: ");
+        fflush(stdin);
+        gets(data.lastName);
+
         printf("\n\t\tEnter Marks\n");
         printf("\t\t\tCSE\t: ");
         scanf("%f", &data.cse);
@@ -107,11 +114,11 @@ void add_student()
         printf("\t\t\tUREM\t: ");
         scanf("%f", &data.urem);
         printf("\t\t\tCSE LAB\t: ");
-        scanf("%f", &data.cse_lab);
+        scanf("%f", &data.cseLab);
         printf("\t\t\tEEE LAB\t: ");
-        scanf("%f", &data.eee_lab);
+        scanf("%f", &data.eeeLab);
 
-        data.grade = (((grade_point(data.cse)) * 3) + ((grade_point(data.cse_lab)) * 1.5) + ((grade_point(data.eee)) * 3) + ((grade_point(data.eee_lab)) * 1.5) + ((grade_point(data.math)) * 3) + ((grade_point(data.physics)) * 3) + ((grade_point(data.urel)) * 2) + ((grade_point(data.urem)) * 1)) / 18;
+        data.grade = (((grade_point(data.cse)) * 3) + ((grade_point(data.cseLab)) * 1.5) + ((grade_point(data.eee)) * 3) + ((grade_point(data.eeeLab)) * 1.5) + ((grade_point(data.math)) * 3) + ((grade_point(data.physics)) * 3) + ((grade_point(data.urel)) * 2) + ((grade_point(data.urem)) * 1)) / 18;
 
         printf("\n\t\tTotal Grade : %0.2f", data.grade);
         printf("\n\t\t_______________________________________\n\n");
@@ -144,18 +151,19 @@ void student_record()
         printf("\n\t\tCan't open file\n");
         return;
     }
+
     printf("\t\t_______________________________________\n\n");
 
     while (fread(&data, sizeof(struct student), 1, pr))
     {
         printf("\t\tStudent id\t: %s\n", data.id);
-        printf("\t\tStudent name\t: %s\n", data.name);
+        printf("\t\tStudent name\t: %s %s\n", data.firstName, data.lastName);
 
         printf("\n\t\tMarks\t:\n");
         printf("\t\t\tCSE\t: %0.2f\n", data.cse);
-        printf("\t\t\tEEE\t: %0.2f\n", data.cse_lab);
+        printf("\t\t\tEEE\t: %0.2f\n", data.cseLab);
         printf("\t\t\tCSE LAB\t: %0.2f\n", data.eee);
-        printf("\t\t\tEEE LAB\t: %0.2f\n", data.eee_lab);
+        printf("\t\t\tEEE LAB\t: %0.2f\n", data.eeeLab);
         printf("\t\t\tENGLISH\t: %0.2f\n", data.urel);
         printf("\t\t\tPHYSICS\t: %0.2f\n", data.physics);
         printf("\t\t\tMATH\t: %0.2f\n", data.math);
@@ -177,6 +185,13 @@ void search_student()
     pr = fopen("student_data.dat", "r");
 
     printf("\n\tSEARCH STUDENT\n\n");
+
+    if (pr == NULL)
+    {
+        printf("\n\t\tCan't open file\n");
+        return;
+    }
+
     printf("\t\tEnter id no : ");
     scanf(" %s", &id);
 
@@ -187,13 +202,13 @@ void search_student()
             find = 1;
             printf("\t\t_______________________________________\n\n");
             printf("\t\tStudent id\t: %s\n", data.id);
-            printf("\t\tStudent name\t: %s\n", data.name);
+            printf("\t\tStudent name\t: %s %s\n", data.firstName, data.lastName);
 
             printf("\n\t\tMarks\t:\n");
             printf("\t\t\tCSE\t: %0.2f\n", data.cse);
-            printf("\t\t\tEEE\t: %0.2f\n", data.cse_lab);
+            printf("\t\t\tEEE\t: %0.2f\n", data.cseLab);
             printf("\t\t\tCSE LAB\t: %0.2f\n", data.eee);
-            printf("\t\t\tEEE LAB\t: %0.2f\n", data.eee_lab);
+            printf("\t\t\tEEE LAB\t: %0.2f\n", data.eeeLab);
             printf("\t\t\tENGLISH\t: %0.2f\n", data.urel);
             printf("\t\t\tPHYSICS\t: %0.2f\n", data.physics);
             printf("\t\t\tMATH\t: %0.2f\n", data.math);
@@ -220,11 +235,14 @@ void delete_student()
     pr = fopen("student_data.dat", "r");
     pr1 = fopen("data_2.dat", "w");
 
+    if (pr == NULL)
+    {
+        printf("\n\t\tCan't open file\n");
+        return;
+    }
+
     printf("\t\tEnter ID : ");
     scanf("%s", &id);
-
-    if (pr == NULL)
-        printf("\n\t\tCan't open file\n");
 
     while (fread(&data, sizeof(struct student), 1, pr))
     {
